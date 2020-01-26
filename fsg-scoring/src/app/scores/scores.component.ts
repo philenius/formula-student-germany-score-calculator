@@ -1,4 +1,5 @@
-import { Component, OnInit, ɵConsole } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-scores',
@@ -7,17 +8,28 @@ import { Component, OnInit, ɵConsole } from '@angular/core';
 })
 export class ScoresComponent implements OnInit {
 
-  tTeam: number = 0;
-  tMax: number = 0;
+  tTeam = new FormControl(0, [
+    Validators.pattern(new RegExp(/^\d+(\.\d{1,2})?$/))
+  ]);
+  tMax = new FormControl(0, [
+    Validators.pattern(new RegExp(/^\d+(\.\d{1,2})?$/))
+  ]);
+  dooEnduranceTTeam = new FormControl(0, [
+    Validators.pattern(new RegExp(/^\d+$/))
+  ]);
+  ocEnduranceTTeam = new FormControl(0, [
+    Validators.pattern(new RegExp(/^\d+$/))
+  ]);
+  dooEnduranceTMax = new FormControl(0, [
+    Validators.pattern(new RegExp(/^\d+$/))
+  ]);
+  ocEnduranceTMax = new FormControl(0, [
+    Validators.pattern(new RegExp(/^\d+$/))
+  ]);
+
   tTeamUnit = 'minutes';
   tMaxUnit = 'minutes';
-  dooEnduranceTTeam: number = 0;
-  ocEnduranceTTeam: number = 0;
-  dooEnduranceTMax: number = 0;
-  ocEnduranceTMax: number = 0;
   enduranceScore: number = 0;
-
-  test = 0;
 
   constructor() { }
 
@@ -25,8 +37,8 @@ export class ScoresComponent implements OnInit {
   }
 
   calculateEnduranceScore() {
-    let tTeam = Number(this.tTeam);
-    let tMax = Number(this.tMax);
+    let tTeam = Number(this.tTeam.value);
+    let tMax = Number(this.tMax.value);
     // unit conversion
     if (this.tTeamUnit === 'minutes') {
       tTeam = this.toSeconds(tTeam);
@@ -43,11 +55,11 @@ export class ScoresComponent implements OnInit {
   }
 
   private penaltiesEnduranceTTeam(): number {
-    return this.penaltiesEndurance(this.dooEnduranceTTeam, this.ocEnduranceTTeam);
+    return this.penaltiesEndurance(this.dooEnduranceTTeam.value, this.ocEnduranceTTeam.value);
   }
 
   private penaltiesEnduranceTMax(): number {
-    return this.penaltiesEndurance(this.dooEnduranceTMax, this.ocEnduranceTMax);
+    return this.penaltiesEndurance(this.dooEnduranceTMax.value, this.ocEnduranceTMax.value);
   }
 
   private penaltiesEndurance(doo: number, oc: number): number {
