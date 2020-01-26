@@ -1,0 +1,90 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Endurance Score</mat-card-title>
+    </mat-card-header>
+
+    <mat-divider [inset]="true"></mat-divider>
+
+    <mat-card-content>
+        <form>
+            <div class="row padding-top" id="form-row">
+
+                <div class="col-lg-6">
+                    <h1>T<sub>team</sub></h1>
+                    <p>T<sub>team</sub> is the team’s elapsed time.</p>
+                    
+                    <mat-form-field>
+                        <input matInput [(ngModel)]="tTeam" placeholder="tTeam" name="tTeam" />
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>Unit</mat-label>
+                        <mat-select [(value)]="tTeamUnit">
+                            <mat-option value="minutes">minutes</mat-option>
+                            <mat-option value="seconds">seconds</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <h2>Penalties</h2>
+                    <mat-form-field class="margin-right">
+                        <input matInput placeholder="Down or Out (DOO)" [(ngModel)]="dooEnduranceTTeam"
+                            name="dooEnduranceTTean">
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <input matInput placeholder="Off-course (OC)" [(ngModel)]="ocEnduranceTTeam"
+                            name="ocEnduranceTTeam">
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6">
+                    <h1>T<sub>max</sub></h1>
+                    <p>T<sub>max</sub> is the elapsed time of the fastest vehicle.</p>
+                    <mat-form-field>
+                        <input matInput [(ngModel)]="tMax" placeholder="tMax" name="tMax" />
+                    </mat-form-field>
+
+                    <mat-form-field class="margin-right">
+                        <mat-label>Unit</mat-label>
+                        <mat-select [(value)]="tMaxUnit">
+                            <mat-option value="minutes">minutes</mat-option>
+                            <mat-option value="seconds">seconds</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <h2>Penalties</h2>
+                    <mat-form-field>
+                        <input matInput placeholder="Down or Out (DOO)" [(ngModel)]="dooEnduranceTMax"
+                            name="dooEnduranceTMax">
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <input matInput placeholder="Off-course (OC)" [(ngModel)]="ocEnduranceTMax"
+                            name="ocEnduranceTMax">
+                    </mat-form-field>
+                </div>
+
+            </div>
+            <div class="row" id="button-row">
+                <div class="col-lg-2">
+                    <button mat-raised-button color="primary" (click)="calculateEnduranceScore()" type="submit">Calculate</button>
+                </div>
+            </div>
+        </form>
+    </mat-card-content>
+
+    <mat-divider [inset]="true"></mat-divider>
+
+    <mat-card-footer>
+        <div class="row" id="result-row">
+            <div class="col-lg-12">
+                <h1>Result</h1>
+            </div>
+            <div class="col-lg-4">
+                <mat-form-field>
+                    <input matInput placeholder="Endurance Score" [(value)]="enduranceScore" name="enduranceScore">
+                </mat-form-field>
+            </div>
+        </div>
+    </mat-card-footer>
+</mat-card>

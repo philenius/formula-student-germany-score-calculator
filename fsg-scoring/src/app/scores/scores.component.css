@@ -1,0 +1,39 @@
+h1 {
+    font-size: 2rem;
+    font-weight: lighter;
+}
+
+h2 {
+    font-size: 1rem;
+    font-weight: lighter;
+}
+
+mat-card-title {
+    font-weight: lighter;
+    font-size: 2rem !important;
+}
+
+.row.padding-top {
+    padding-top: 1rem;
+}
+
+#result-row {
+    padding-top: 1rem;
+    margin-left: 1rem;
+}
+
+#button-row {
+    margin-left: 0.1rem;
+}
+
+#form-row {
+    margin-left: 0.1rem;
+}
+
+#result-row h1 {
+    font-size: 1.5rem;
+}
+
+mat-form-field.margin-right {
+    margin-right: 1rem;
+}
