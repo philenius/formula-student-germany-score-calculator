@@ -3,11 +3,11 @@ import { FormControl, Validators } from '@angular/forms';
 import { EnduranceScoreService } from '../endurance-score.service';
 
 @Component({
-  selector: 'app-scores',
-  templateUrl: './scores.component.html',
-  styleUrls: ['./scores.component.css']
+  selector: 'app-endurance-score',
+  templateUrl: './endurance-score.component.html',
+  styleUrls: ['./endurance-score.component.css']
 })
-export class ScoresComponent implements OnInit {
+export class EnduranceScoreComponent implements OnInit {
 
   tTeam = new FormControl(0, [
     Validators.pattern(new RegExp(/^\d+(\.\d{1,2})?$/))

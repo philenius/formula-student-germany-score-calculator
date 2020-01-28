@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ScoresComponent } from './scores/scores.component';
+import { EnduranceScoreComponent } from './endurance-score/endurance-score.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -20,7 +20,7 @@ import { EfficiencyFactorComponent } from './efficiency-factor/efficiency-factor
 @NgModule({
   declarations: [
     AppComponent,
-    ScoresComponent,
+    EnduranceScoreComponent,
     EfficiencyFactorComponent
   ],
   imports: [

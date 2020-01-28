@@ -17,20 +17,16 @@ mat-card-title {
     padding-top: 1rem;
 }
 
-#result-row {
+.row.result {
     padding-top: 1rem;
     margin-left: 1rem;
 }
 
-#button-row {
-    margin-left: 0.1rem;
+form {
+    margin-left: 1.1rem !important;
 }
 
-#form-row {
-    margin-left: 0.1rem;
-}
-
-#result-row h1 {
+.row.result h1 {
     font-size: 1.5rem;
 }
 
