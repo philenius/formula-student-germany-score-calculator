@@ -14,12 +14,14 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatCardModule} from '@angular/material/card'; 
 import {MatButtonModule} from '@angular/material/button'; 
 import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatDividerModule} from '@angular/material/divider'; 
+import {MatDividerModule} from '@angular/material/divider';
+import { EfficiencyFactorComponent } from './efficiency-factor/efficiency-factor.component'; 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ScoresComponent
+    ScoresComponent,
+    EfficiencyFactorComponent
   ],
   imports: [
     BrowserModule,

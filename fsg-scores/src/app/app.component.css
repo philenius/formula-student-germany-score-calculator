@@ -9,3 +9,7 @@ img {
     width: 7rem;
     margin-right: 1rem;
 }
+
+div.row {
+    margin-bottom: 2rem;
+}

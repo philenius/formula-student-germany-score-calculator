@@ -1,0 +1,42 @@
+import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
+import { EfficiencyFactorService } from '../efficiency-factor.service';
+
+@Component({
+  selector: 'app-efficiency-factor',
+  templateUrl: './efficiency-factor.component.html',
+  styleUrls: ['./efficiency-factor.component.css']
+})
+export class EfficiencyFactorComponent implements OnInit {
+
+  tTeam = new FormControl(0, [
+    Validators.pattern(new RegExp(/^\d+(\.\d{1,2})?$/))
+  ]);
+  tMin = new FormControl(0, [
+    Validators.pattern(new RegExp(/^\d+(\.\d{1,2})?$/))
+  ]);
+  enTeam = new FormControl(0, [
+    Validators.pattern(new RegExp(/^\d+(\.\d{1,2})?$/))
+  ]);
+  enMin = new FormControl(0, [
+    Validators.pattern(new RegExp(/^\d+(\.\d{1,2})?$/))
+  ]);
+
+  tTeamUnit = 'minutes';
+  tMinUnit = 'minutes';
+  efficiencyFactor: number = 0;
+
+  constructor(private efficiencyFactorService: EfficiencyFactorService) { }
+
+  ngOnInit() {
+  }
+
+  calculateEfficiencyFactor() {
+    this.efficiencyFactor = this.efficiencyFactorService.calculate(
+      Number(this.tTeam.value), Number(this.tMin.value),
+      this.tTeamUnit, this.tMinUnit,
+      Number(this.enTeam.value), Number(this.enMin.value)
+    );
+  }
+
+}

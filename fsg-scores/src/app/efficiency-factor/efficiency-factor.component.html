@@ -1,0 +1,129 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Efficiency Factor</mat-card-title>
+    </mat-card-header>
+
+    <mat-divider [inset]="true"></mat-divider>
+
+    <mat-card-content>
+        <form>
+            <div class="row padding-top form-row">
+
+                <div class="col-lg-6 col-md-6">
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1>T<sub>team</sub></h1>
+                            <p>T<sub>team</sub> is the team’s uncorrected elapsed driving time in seconds.</p>
+                        </div>
+
+                        <div class="col-lg-12 padding-top">
+                            <mat-form-field>
+                                <input matInput [formControl]="tTeam" placeholder="tTeam" name="tTeam" />
+                                <mat-error
+                                    *ngIf="tTeam.errors && (tTeam.dirty || tTeam.touched) && tTeam.errors.pattern">
+                                    Only decimal points allowed, no commas</mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <mat-label>Unit</mat-label>
+                                <mat-select [(value)]="tTeamUnit">
+                                    <mat-option value="minutes">minutes</mat-option>
+                                    <mat-option value="seconds">seconds</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6">
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1>T<sub>min</sub></h1>
+                            <p>T<sub>min</sub> is the fastest uncorrected elapsed driving time of all teams who are able to score points in efficiency.</p>
+                        </div>
+
+                        <div class="col-lg-12 padding-top">
+                            <mat-form-field>
+                                <input matInput [formControl]="tMin" placeholder="tMin" name="tMin" />
+                                <mat-error *ngIf="tMin.errors && (tMin.dirty || tMin.touched) && tMin.errors.pattern">
+                                    Only decimal points allowed, no commas</mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field class="margin-right">
+                                <mat-label>Unit</mat-label>
+                                <mat-select [(value)]="tMinUnit">
+                                    <mat-option value="minutes">minutes</mat-option>
+                                    <mat-option value="seconds">seconds</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row padding-top form-row">
+
+                <div class="col-lg-6 col-md-6">
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1>EN<sub>team</sub></h1>
+                            <p>EN<sub>team</sub> is the team’s corrected used energy.</p>
+                        </div>
+
+                        <div class="col-lg-12 padding-top">
+                            <mat-form-field>
+                                <input matInput [formControl]="enTeam" placeholder="enTeam" name="enTeam" />
+                                <mat-error *ngIf="enTeam.errors && (enTeam.dirty || enTeam.touched) && enTeam.errors.pattern">
+                                    Only decimal points allowed, no commas</mat-error>
+                            </mat-form-field>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1>EN<sub>min</sub></h1>
+                            <p>EN<sub>min</sub> is the lowest corrected used energy of all teams who are able to score points in efficiency.                               efficiency.</p>
+                        </div>
+
+                        <div class="col-lg-12 padding-top">
+                            <mat-form-field>
+                                <input matInput [formControl]="enMin" placeholder="enMin" name="enMin" />
+                                <mat-error *ngIf="enMin.errors && (enMin.dirty || enMin.touched) && enMin.errors.pattern">
+                                    Only decimal points allowed, no commas</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row padding-top">
+                <div class="col-lg-2">
+                    <button mat-raised-button color="primary" (click)="calculateEfficiencyFactor()"
+                        type="submit">Calculate</button>
+                </div>
+            </div>
+        </form>
+    </mat-card-content>
+
+    <mat-divider [inset]="true"></mat-divider>
+
+    <mat-card-footer>
+        <div class="row result">
+            <div class="col-lg-12">
+                <h1>Result</h1>
+            </div>
+            <div class="col-lg-4">
+                <mat-form-field>
+                    <input matInput placeholder="Efficiency Factor" [(value)]="efficiencyFactor" name="efficiencyFactor">
+                </mat-form-field>
+            </div>
+        </div>
+    </mat-card-footer>
+</mat-card>
