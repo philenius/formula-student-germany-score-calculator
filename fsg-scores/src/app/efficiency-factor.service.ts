@@ -12,17 +12,13 @@ export class EfficiencyFactorService {
 
     // unit conversion
     if (tTeamUnit === 'minutes') {
-      tTeam = this.toSeconds(tTeam);
+      tTeam *= 60;
     }
     if (tMinUnit === 'minutes') {
-      tMin = this.toSeconds(tMin);
+      tMin *= 60;
     }
 
     return (tMin * Math.pow(enMin, 2)) / (tTeam * Math.pow(enTeam, 2));
-  }
-
-  private toSeconds(minutes: number): number {
-    return minutes * 60;
   }
 
 }

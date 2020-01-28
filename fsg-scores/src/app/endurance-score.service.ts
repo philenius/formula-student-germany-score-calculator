@@ -12,10 +12,10 @@ export class EnduranceScoreService {
 
     // unit conversion
     if (tTeamUnit === 'minutes') {
-      tTeam = this.toSeconds(tTeam);
+      tTeam *= 60;
     }
     if (tMaxUnit === 'minutes') {
-      tMax = this.toSeconds(tMax);
+      tMax *= 60;
     }
 
     // penalties
@@ -35,10 +35,6 @@ export class EnduranceScoreService {
       p += oc * 10;
     }
     return p;
-  }
-
-  private toSeconds(minutes: number): number {
-    return minutes * 60;
   }
 
 }
