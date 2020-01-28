@@ -38,11 +38,12 @@ export class ScoresComponent implements OnInit {
   }
 
   calculateEnduranceScore() {
-    let tTeam = Number(this.tTeam.value);
-    let tMax = Number(this.tMax.value);
-
-    this.enduranceScore = this.enduranceScoreService.calculate(tTeam, tMax, this.tTeamUnit, this.tMaxUnit, this.dooEnduranceTTeam.value,
-      this.ocEnduranceTTeam.value, this.dooEnduranceTMax.value, this.ocEnduranceTMax.value);
+    this.enduranceScore = this.enduranceScoreService.calculate(
+      Number(this.tTeam.value), Number(this.tMax.value),
+      this.tTeamUnit, this.tMaxUnit,
+      Number(this.dooEnduranceTTeam.value), Number(this.ocEnduranceTTeam.value),
+      Number(this.dooEnduranceTMax.value), Number(this.ocEnduranceTMax.value)
+    );
   }
 
 }
