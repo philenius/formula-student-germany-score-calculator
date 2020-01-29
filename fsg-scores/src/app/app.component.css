@@ -11,5 +11,9 @@ img {
 }
 
 div.row {
-    margin-bottom: 2rem;
+    margin-top: 3rem;
+}
+
+div.row:last-of-type {
+    margin-bottom: 3rem;
 }
