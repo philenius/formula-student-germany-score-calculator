@@ -15,13 +15,15 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button'; 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDividerModule} from '@angular/material/divider';
-import { EfficiencyFactorComponent } from './efficiency-factor/efficiency-factor.component'; 
+import { EfficiencyFactorComponent } from './efficiency-factor/efficiency-factor.component';
+import { EfficiencyScoreComponent } from './efficiency-score/efficiency-score.component'; 
 
 @NgModule({
   declarations: [
     AppComponent,
     EnduranceScoreComponent,
-    EfficiencyFactorComponent
+    EfficiencyFactorComponent,
+    EfficiencyScoreComponent
   ],
   imports: [
     BrowserModule,

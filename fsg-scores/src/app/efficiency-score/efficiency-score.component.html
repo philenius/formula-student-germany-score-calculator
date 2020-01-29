@@ -1,0 +1,75 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Efficiency Score</mat-card-title>
+    </mat-card-header>
+
+    <mat-divider [inset]="true"></mat-divider>
+
+    <mat-card-content>
+        <form>
+            <div class="row padding-top form-row">
+
+                <div class="col-lg-6 col-md-6">
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1>E<sub>team</sub></h1>
+                            <p>E<sub>team</sub> is the team’s efficiency factor.</p>
+                        </div>
+
+                        <div class="col-lg-12 padding-top">
+                            <mat-form-field>
+                                <input matInput [formControl]="eTeam" placeholder="eTeam" name="eTeam" />
+                                <mat-error
+                                    *ngIf="eTeam.errors && (eTeam.dirty || eTeam.touched) && eTeam.errors.pattern">
+                                    Only decimal points allowed, no commas</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6">
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1>E<sub>max</sub></h1>
+                            <p>E<sub>max</sub> is the highest efficiency factor of all teams who are able to score
+                                points in efficiency.</p>
+                        </div>
+
+                        <div class="col-lg-12 padding-top">
+                            <mat-form-field>
+                                <input matInput [formControl]="eMax" placeholder="eMax" name="eMax" />
+                                <mat-error *ngIf="eMax.errors && (eMax.dirty || eMax.touched) && eMax.errors.pattern">
+                                    Only decimal points allowed, no commas</mat-error>
+                            </mat-form-field>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="row padding-top">
+                <div class="col-lg-2">
+                    <button mat-raised-button color="primary" (click)="calculateEfficiencyScore()"
+                        type="submit">Calculate</button>
+                </div>
+            </div>
+        </form>
+    </mat-card-content>
+
+    <mat-divider [inset]="true"></mat-divider>
+
+    <mat-card-footer>
+        <div class="row result">
+            <div class="col-lg-12">
+                <h1>Result</h1>
+            </div>
+            <div class="col-lg-4">
+                <mat-form-field>
+                    <input matInput placeholder="Efficiency Score" [(value)]="efficiencyScore" name="efficiencyScore">
+                </mat-form-field>
+            </div>
+        </div>
+    </mat-card-footer>
+</mat-card>
