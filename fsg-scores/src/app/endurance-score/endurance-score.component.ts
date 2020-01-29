@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { EnduranceScoreService } from '../endurance-score.service';
+import { NotificationService } from '../notification.service';
 
 @Component({
   selector: 'app-endurance-score',
@@ -32,7 +33,7 @@ export class EnduranceScoreComponent implements OnInit {
   tMaxUnit = 'minutes';
   enduranceScore: number = 0;
 
-  constructor(private enduranceScoreService: EnduranceScoreService) { }
+  constructor(private enduranceScoreService: EnduranceScoreService, private notifactionService: NotificationService) { }
 
   ngOnInit() {
   }
@@ -44,6 +45,9 @@ export class EnduranceScoreComponent implements OnInit {
       Number(this.dooEnduranceTTeam.value), Number(this.ocEnduranceTTeam.value),
       Number(this.dooEnduranceTMax.value), Number(this.ocEnduranceTMax.value)
     );
+    if (isNaN(this.enduranceScore)) {
+      this.notifactionService.showErrorMessage('Calculation of endurance score failed.');
+    }
   }
 
 }

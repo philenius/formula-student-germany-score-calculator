@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { EfficiencyFactorService } from '../efficiency-factor.service';
+import { NotificationService } from '../notification.service';
 
 @Component({
   selector: 'app-efficiency-factor',
@@ -26,7 +27,7 @@ export class EfficiencyFactorComponent implements OnInit {
   tMinUnit = 'minutes';
   efficiencyFactor: number = 0;
 
-  constructor(private efficiencyFactorService: EfficiencyFactorService) { }
+  constructor(private efficiencyFactorService: EfficiencyFactorService, private notifactionService: NotificationService) { }
 
   ngOnInit() {
   }
@@ -37,6 +38,9 @@ export class EfficiencyFactorComponent implements OnInit {
       this.tTeamUnit, this.tMinUnit,
       Number(this.enTeam.value), Number(this.enMin.value)
     );
+    if (isNaN(this.efficiencyFactor)) {
+      this.notifactionService.showErrorMessage('Calculation of efficiency factor failed.');
+    }
   }
 
 }

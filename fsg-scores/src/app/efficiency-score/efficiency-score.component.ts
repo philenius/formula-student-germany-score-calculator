@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { EfficiencyScoreService } from '../efficiency-score.service';
+import { NotificationService } from '../notification.service';
 
 @Component({
   selector: 'app-efficiency-score',
@@ -17,7 +18,7 @@ export class EfficiencyScoreComponent implements OnInit {
   ]);
   efficiencyScore: number = 0;
 
-  constructor(private efficiencyScoreService: EfficiencyScoreService) { }
+  constructor(private efficiencyScoreService: EfficiencyScoreService, private notifactionService: NotificationService) { }
 
   ngOnInit() {
   }
@@ -26,6 +27,10 @@ export class EfficiencyScoreComponent implements OnInit {
     this.efficiencyScore = this.efficiencyScoreService.calculate(
       Number(this.eTeam.value), Number(this.eMax.value)
     );
+    if (isNaN(this.efficiencyScore)) {
+      this.notifactionService.showErrorMessage('Calculation of efficiency score failed.');
+    }
+
   }
 
 }
