@@ -10,10 +10,10 @@ import { EnduranceScoreService } from '../endurance-score.service';
 export class EnduranceScoreComponent implements OnInit {
 
   tTeam = new FormControl(0, [
-    Validators.pattern(new RegExp(/^\d+(\.\d{1,2})?$/))
+    Validators.pattern(new RegExp(/^\d+(\.\d+)?$/))
   ]);
   tMax = new FormControl(0, [
-    Validators.pattern(new RegExp(/^\d+(\.\d{1,2})?$/))
+    Validators.pattern(new RegExp(/^\d+(\.\d+)?$/))
   ]);
   dooEnduranceTTeam = new FormControl(0, [
     Validators.pattern(new RegExp(/^\d+$/))

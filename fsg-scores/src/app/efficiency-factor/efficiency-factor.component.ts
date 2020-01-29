@@ -10,16 +10,16 @@ import { EfficiencyFactorService } from '../efficiency-factor.service';
 export class EfficiencyFactorComponent implements OnInit {
 
   tTeam = new FormControl(0, [
-    Validators.pattern(new RegExp(/^\d+(\.\d{1,2})?$/))
+    Validators.pattern(new RegExp(/^\d+(\.\d+)?$/))
   ]);
   tMin = new FormControl(0, [
-    Validators.pattern(new RegExp(/^\d+(\.\d{1,2})?$/))
+    Validators.pattern(new RegExp(/^\d+(\.\d+)?$/))
   ]);
   enTeam = new FormControl(0, [
-    Validators.pattern(new RegExp(/^\d+(\.\d{1,2})?$/))
+    Validators.pattern(new RegExp(/^\d+(\.\d+)?$/))
   ]);
   enMin = new FormControl(0, [
-    Validators.pattern(new RegExp(/^\d+(\.\d{1,2})?$/))
+    Validators.pattern(new RegExp(/^\d+(\.\d+)?$/))
   ]);
 
   tTeamUnit = 'minutes';
