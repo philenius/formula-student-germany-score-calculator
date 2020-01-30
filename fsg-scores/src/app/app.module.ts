@@ -8,15 +8,17 @@ import { EnduranceScoreComponent } from './endurance-score/endurance-score.compo
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import {MatSelectModule} from '@angular/material/select';
-import {MatInputModule} from '@angular/material/input';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle'; 
-import {MatCardModule} from '@angular/material/card'; 
-import {MatButtonModule} from '@angular/material/button'; 
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatDividerModule} from '@angular/material/divider';
-import {MatSnackBarModule} from '@angular/material/snack-bar'; 
-import {MatIconModule} from '@angular/material/icon'; 
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTabsModule } from '@angular/material/tabs';
+
 import { EfficiencyFactorComponent } from './efficiency-factor/efficiency-factor.component';
 import { EfficiencyScoreComponent } from './efficiency-score/efficiency-score.component';
 import { AutocrossScoreComponent } from './autocross-score/autocross-score.component';
@@ -44,6 +46,7 @@ import { AutocrossScoreComponent } from './autocross-score/autocross-score.compo
     MatDividerModule,
     MatSnackBarModule,
     MatIconModule,
+    MatTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,24 +5,18 @@
     </mat-toolbar-row>
 </mat-toolbar>
 <div class="container">
-    <div class="row">
-        <div class="col-lg-12">
+    <mat-tab-group>
+        <mat-tab label="Autocross Score">
             <app-autocross-score></app-autocross-score>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-12">
+        </mat-tab>
+        <mat-tab label="Endurance Score">
             <app-endurance-score></app-endurance-score>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-12">
+        </mat-tab>
+        <mat-tab label="Efficiency Factor">
             <app-efficiency-factor></app-efficiency-factor>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-12">
+        </mat-tab>
+        <mat-tab label="Efficiency Score">
             <app-efficiency-score></app-efficiency-score>
-        </div>
-    </div>
+        </mat-tab>
+    </mat-tab-group>
 </div>
