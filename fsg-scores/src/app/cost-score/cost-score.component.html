@@ -22,7 +22,7 @@
                                 <input matInput [formControl]="pTeam" placeholder="pTeam" name="pTeam" />
                                 <mat-error
                                     *ngIf="pTeam.errors && (pTeam.dirty || pTeam.touched) && pTeam.errors.pattern">
-                                    Only decimal points allowed, no commas</mat-error>
+                                    Only integer values allowed</mat-error>
                             </mat-form-field>
                         </div>
                     </div>
@@ -40,7 +40,7 @@
                             <mat-form-field>
                                 <input matInput [formControl]="pMax" placeholder="pMax" name="pMax" />
                                 <mat-error *ngIf="pMax.errors && (pMax.dirty || pMax.touched) && pMax.errors.pattern">
-                                    Only decimal points allowed, no commas</mat-error>
+                                    Only integer values allowed</mat-error>
                             </mat-form-field>
                         </div>
 
