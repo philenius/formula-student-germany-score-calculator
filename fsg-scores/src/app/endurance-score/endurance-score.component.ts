@@ -16,16 +16,16 @@ export class EnduranceScoreComponent implements OnInit {
   tMax = new FormControl(0, [
     Validators.pattern(new RegExp(/^\d+(\.\d+)?$/))
   ]);
-  dooEnduranceTTeam = new FormControl(0, [
+  dooTTeam = new FormControl(0, [
     Validators.pattern(new RegExp(/^\d+$/))
   ]);
-  ocEnduranceTTeam = new FormControl(0, [
+  ocTTeam = new FormControl(0, [
     Validators.pattern(new RegExp(/^\d+$/))
   ]);
-  dooEnduranceTMax = new FormControl(0, [
+  dooTMax = new FormControl(0, [
     Validators.pattern(new RegExp(/^\d+$/))
   ]);
-  ocEnduranceTMax = new FormControl(0, [
+  ocTMax = new FormControl(0, [
     Validators.pattern(new RegExp(/^\d+$/))
   ]);
 
@@ -42,8 +42,8 @@ export class EnduranceScoreComponent implements OnInit {
     this.enduranceScore = this.enduranceScoreService.calculate(
       Number(this.tTeam.value), Number(this.tMax.value),
       this.tTeamUnit, this.tMaxUnit,
-      Number(this.dooEnduranceTTeam.value), Number(this.ocEnduranceTTeam.value),
-      Number(this.dooEnduranceTMax.value), Number(this.ocEnduranceTMax.value)
+      Number(this.dooTTeam.value), Number(this.ocTTeam.value),
+      Number(this.dooTMax.value), Number(this.ocTMax.value)
     );
     if (isNaN(this.enduranceScore)) {
       this.notifactionService.showErrorMessage('Calculation of endurance score failed.');
