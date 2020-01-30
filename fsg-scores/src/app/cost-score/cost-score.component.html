@@ -1,0 +1,81 @@
+<mat-card class="score-card mat-elevation-z3">
+    <mat-card-header>
+        <mat-card-title>Cost Score</mat-card-title>
+    </mat-card-header>
+
+    <mat-divider [inset]="true"></mat-divider>
+
+    <mat-card-content>
+        <form>
+            <div class="row padding-top form-row">
+
+                <div class="col-lg-6 col-md-6">
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1>P<sub>team</sub></h1>
+                            <p>P<sub>team</sub> is the score awarded to the team.</p>
+                        </div>
+
+                        <div class="col-lg-12 padding-top">
+                            <mat-form-field>
+                                <input matInput [formControl]="pTeam" placeholder="pTeam" name="pTeam" />
+                                <mat-error
+                                    *ngIf="pTeam.errors && (pTeam.dirty || pTeam.touched) && pTeam.errors.pattern">
+                                    Only decimal points allowed, no commas</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6">
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1>P<sub>max</sub></h1>
+                            <p>P<sub>max</sub> is the highest score awarded to any team not participating in the finals.</p>
+                        </div>
+
+                        <div class="col-lg-12 padding-top">
+                            <mat-form-field>
+                                <input matInput [formControl]="pMax" placeholder="pMax" name="pMax" />
+                                <mat-error *ngIf="pMax.errors && (pMax.dirty || pMax.touched) && pMax.errors.pattern">
+                                    Only decimal points allowed, no commas</mat-error>
+                            </mat-form-field>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="row padding-top">
+                <div class="col-lg-2">
+                    <button mat-raised-button color="primary" (click)="calculateCostScore()"
+                        type="submit">Calculate</button>
+                </div>
+            </div>
+        </form>
+    </mat-card-content>
+
+    <mat-divider [inset]="true"></mat-divider>
+
+    <mat-card-footer>
+        <div class="row result">
+            <div class="col-lg-12">
+                <h1>Result</h1>
+            </div>
+            <div class="col-lg-3">
+                <mat-form-field>
+                    <input matInput placeholder="Cost Score" [(value)]="costScore" name="costScore">
+                </mat-form-field>
+            </div>
+            <div class="col-lg-8">
+                <p>
+                    <mat-icon aria-hidden="false" aria-label="warning icon" color="accent">error_outline</mat-icon>
+                    The scoring of the cost and manufacturing finalists will vary from 100 to 96 points.
+                    (<i>S 2.10.5</i>).
+                </p>
+            </div>
+        </div>
+    </mat-card-footer>
+</mat-card>

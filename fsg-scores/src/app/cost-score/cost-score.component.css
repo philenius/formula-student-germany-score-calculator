@@ -1,0 +1,52 @@
+h1 {
+    font-size: 2rem;
+    font-weight: lighter;
+}
+
+h2 {
+    font-size: 1rem;
+    font-weight: lighter;
+}
+
+mat-card-title {
+    font-weight: lighter;
+    font-size: 2rem !important;
+}
+
+.padding-top {
+    padding-top: 1rem;
+}
+
+.row.result {
+    padding-top: 1rem;
+    margin-left: 1rem;
+}
+
+form {
+    margin-left: 1.1rem !important;
+}
+
+.row.result h1 {
+    font-size: 1.5rem;
+}
+
+mat-form-field.margin-right {
+    margin-right: 1rem;
+}
+
+@media (max-width: 767px) {
+    .score-card {
+        margin: 0rem 0rem;
+        padding-left: 0;
+        padding-right: 0;
+        max-width: 100%;
+        overflow: hidden;
+    }
+}
+
+@media (min-width: 768px) {
+    .score-card {
+        margin: 1rem;
+        max-width: 100%;
+    }
+}

@@ -24,6 +24,7 @@ import { EfficiencyScoreComponent } from './efficiency-score/efficiency-score.co
 import { AutocrossScoreComponent } from './autocross-score/autocross-score.component';
 import { SkidpadScoreComponent } from './skidpad-score/skidpad-score.component';
 import { AccelerationScoreComponent } from './acceleration-score/acceleration-score.component';
+import { CostScoreComponent } from './cost-score/cost-score.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { AccelerationScoreComponent } from './acceleration-score/acceleration-sc
     AutocrossScoreComponent,
     SkidpadScoreComponent,
     AccelerationScoreComponent,
+    CostScoreComponent,
   ],
   imports: [
     BrowserModule,
