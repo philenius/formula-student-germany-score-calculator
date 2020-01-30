@@ -16,8 +16,10 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatSnackBarModule} from '@angular/material/snack-bar'; 
+import {MatIconModule} from '@angular/material/icon'; 
 import { EfficiencyFactorComponent } from './efficiency-factor/efficiency-factor.component';
 import { EfficiencyScoreComponent } from './efficiency-score/efficiency-score.component';
+import { AutocrossScoreComponent } from './autocross-score/autocross-score.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { EfficiencyScoreComponent } from './efficiency-score/efficiency-score.co
     EnduranceScoreComponent,
     EfficiencyFactorComponent,
     EfficiencyScoreComponent,
+    AutocrossScoreComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +43,7 @@ import { EfficiencyScoreComponent } from './efficiency-score/efficiency-score.co
     MatToolbarModule,
     MatDividerModule,
     MatSnackBarModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
