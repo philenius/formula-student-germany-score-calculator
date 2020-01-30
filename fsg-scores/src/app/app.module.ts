@@ -22,6 +22,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { EfficiencyFactorComponent } from './efficiency-factor/efficiency-factor.component';
 import { EfficiencyScoreComponent } from './efficiency-score/efficiency-score.component';
 import { AutocrossScoreComponent } from './autocross-score/autocross-score.component';
+import { SkidpadScoreComponent } from './skidpad-score/skidpad-score.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { AutocrossScoreComponent } from './autocross-score/autocross-score.compo
     EfficiencyFactorComponent,
     EfficiencyScoreComponent,
     AutocrossScoreComponent,
+    SkidpadScoreComponent,
   ],
   imports: [
     BrowserModule,
