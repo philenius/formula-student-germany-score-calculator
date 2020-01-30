@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class SkidpadScoreService {
-  
+export class AccelerationScoreService {
+
   calculate(tTeam: number, tMax: number, tTeamUnit: string, tMaxUnit: string,
     tTeamDoo: number, tTeamOc: number, tTeamUss: number,
     tMaxDoo: number, tMaxOc: number, tMaxUss: number) {
@@ -18,17 +18,17 @@ export class SkidpadScoreService {
     }
 
     // penalties
-    tTeam += this.penaltiesSkidpad(tTeamDoo, tTeamOc, tTeamUss);
-    tMax += this.penaltiesSkidpad(tMaxDoo, tMaxOc, tMaxUss);
+    tTeam += this.penaltiesAcceleration(tTeamDoo, tTeamOc, tTeamUss);
+    tMax += this.penaltiesAcceleration(tMaxDoo, tMaxOc, tMaxUss);
 
-    tMax *= 1.25;
-    return 71.5 * ((Math.pow(tMax / tTeam, 2) - 1) / 0.5625);
+    tMax *= 1.5;
+    return 71.5 * (((tMax / tTeam) - 1) / 0.5);
   }
 
-  private penaltiesSkidpad(doo: number, oc: number, uss: number): number {
+  private penaltiesAcceleration(doo: number, oc: number, uss: number): number {
     let p = 0;
     if (doo !== 0) {
-      p += doo * 0.2;
+      p += doo * 2;
     }
     if (oc !== 0 || uss !== 0) {
       throw new Error('Warning: Unsafe Stop (USS) causes penalty of Did not Finish (DNF).')

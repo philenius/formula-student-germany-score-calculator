@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { AutocrossScoreService } from '../autocross-score.service';
+import { AccelerationScoreService } from '../acceleration-score.service';
 import { NotificationService } from '../notification.service';
 
 @Component({
-  selector: 'app-autocross-score',
-  templateUrl: './autocross-score.component.html',
-  styleUrls: ['./autocross-score.component.css']
+  selector: 'app-acceleration-score',
+  templateUrl: './acceleration-score.component.html',
+  styleUrls: ['./acceleration-score.component.css']
 })
-export class AutocrossScoreComponent implements OnInit {
+export class AccelerationScoreComponent implements OnInit {
 
   tTeam = new FormControl(0, [
     Validators.pattern(new RegExp(/^\d+(\.\d+)?$/))
@@ -37,28 +37,27 @@ export class AutocrossScoreComponent implements OnInit {
 
   tTeamUnit = 'minutes';
   tMaxUnit = 'minutes';
-  autocrossScore: number = 0;
+  accelerationScore: number = 0;
 
-  constructor(private autocrossScoreService: AutocrossScoreService, private notifactionService: NotificationService) { }
+  constructor(private accelerationScoreService: AccelerationScoreService, private notifactionService: NotificationService) { }
 
   ngOnInit() {
   }
 
-  calculateAutocrossScore() {
+  calculateAccelerationScore() {
     try {
-      this.autocrossScore = this.autocrossScoreService.calculate(
+      this.accelerationScore = this.accelerationScoreService.calculate(
         Number(this.tTeam.value), Number(this.tMax.value),
         this.tTeamUnit, this.tMaxUnit,
         Number(this.dooTTeam.value), Number(this.ocTTeam.value), Number(this.ussTTeam.value),
         Number(this.dooTMax.value), Number(this.ocTMax.value), Number(this.ussTMax.value)
       );
-      if (isNaN(this.autocrossScore)) {
-        this.notifactionService.showErrorMessage('Calculation of autocross score failed.');
+      if (isNaN(this.accelerationScore)) {
+        this.notifactionService.showErrorMessage('Calculation of acceleration score failed.');
       }
     } catch (e) {
-      this.autocrossScore = NaN;
+      this.accelerationScore = NaN;
       this.notifactionService.showErrorMessage((e as Error).message);
     }
   }
-
 }
