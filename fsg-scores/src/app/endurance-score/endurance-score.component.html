@@ -123,10 +123,17 @@
             <div class="col-lg-12">
                 <h1>Result</h1>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <mat-form-field>
                     <input matInput placeholder="Endurance Score" [(value)]="enduranceScore" name="enduranceScore">
                 </mat-form-field>
+            </div>
+            <div class="col-lg-8">
+                <p>
+                    <mat-icon aria-hidden="false" aria-label="warning icon" color="accent">error_outline</mat-icon>
+                    25 additional points are awarded to every team that finishes endurance without DNF or DQ.
+                    (<i>D 7.8.3</i>).
+                </p>
             </div>
         </div>
     </mat-card-footer>
