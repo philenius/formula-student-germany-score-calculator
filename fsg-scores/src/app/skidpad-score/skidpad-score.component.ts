@@ -61,6 +61,10 @@ export class SkidpadScoreComponent implements OnInit {
       this.skidpadScore = NaN;
       this.notifactionService.showErrorMessage((e as Error).message);
     }
+    if (this.skidpadScore < 0) {
+      this.skidpadScore = 0.0;
+      this.notifactionService.showErrorMessage('No additional points awarded because team’s run time including penalties is not below Tmax.');
+    }
   }
 
 }
