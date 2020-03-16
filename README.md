@@ -19,7 +19,7 @@ The calculation of the following scores has been implemented:
 
 ## Development
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to [http://localhost:4200/](http://localhost:4200/). The app will automatically reload if you change any of the source files.
 
 ```bash
 npm install -g @angular/cli@8.3.23
@@ -30,7 +30,7 @@ ng serve
 
 ## Deployment
 
-You can either use Docker Compose or Docker directly for building and deploying this application. Docker Compose will automatically build the Docker Image, if it hasn't been built before. Navigate to `http://localhost:8080/` to access the app. 
+You can either use Docker Compose or Docker directly for building and deploying this application. Docker Compose will automatically build the Docker Image, if it hasn't been built before. Navigate to [http://localhost:8080/](http://localhost:8080/) to access the app. 
 
 * Docker:
   ```bash
