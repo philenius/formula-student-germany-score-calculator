@@ -16,4 +16,8 @@ export class NotificationService {
     console.error(message);
   }
 
+  dismissCurrentErrorMessage() {
+    this.snackBar.dismiss();
+  }
+
 }

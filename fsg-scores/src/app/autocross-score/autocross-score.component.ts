@@ -45,6 +45,8 @@ export class AutocrossScoreComponent implements OnInit {
   }
 
   calculateAutocrossScore() {
+    this.notifactionService.dismissCurrentErrorMessage();
+    
     try {
       this.autocrossScore = this.autocrossScoreService.calculate(
         Number(this.tTeam.value), Number(this.tMax.value),

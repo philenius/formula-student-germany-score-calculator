@@ -24,6 +24,8 @@ export class EfficiencyScoreComponent implements OnInit {
   }
 
   calculateEfficiencyScore() {
+    this.notifactionService.dismissCurrentErrorMessage();
+
     this.efficiencyScore = this.efficiencyScoreService.calculate(
       Number(this.eTeam.value), Number(this.eMax.value)
     );

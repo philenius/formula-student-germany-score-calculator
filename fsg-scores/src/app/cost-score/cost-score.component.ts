@@ -24,6 +24,8 @@ export class CostScoreComponent implements OnInit {
   }
 
   calculateCostScore() {
+    this.notifactionService.dismissCurrentErrorMessage();
+
     this.costScore = this.costScoreService.calculate(
       Number(this.pTeam.value), Number(this.pMax.value)
     );

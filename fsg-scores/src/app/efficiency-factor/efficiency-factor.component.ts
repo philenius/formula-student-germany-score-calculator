@@ -33,6 +33,8 @@ export class EfficiencyFactorComponent implements OnInit {
   }
 
   calculateEfficiencyFactor() {
+    this.notifactionService.dismissCurrentErrorMessage();
+
     this.efficiencyFactor = this.efficiencyFactorService.calculate(
       Number(this.tTeam.value), Number(this.tMin.value),
       this.tTeamUnit, this.tMinUnit,

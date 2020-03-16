@@ -45,6 +45,8 @@ export class AccelerationScoreComponent implements OnInit {
   }
 
   calculateAccelerationScore() {
+    this.notifactionService.dismissCurrentErrorMessage();
+
     try {
       this.accelerationScore = this.accelerationScoreService.calculate(
         Number(this.tTeam.value), Number(this.tMax.value),

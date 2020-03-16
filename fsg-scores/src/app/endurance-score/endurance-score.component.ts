@@ -39,6 +39,8 @@ export class EnduranceScoreComponent implements OnInit {
   }
 
   calculateEnduranceScore() {
+    this.notifactionService.dismissCurrentErrorMessage();
+
     this.enduranceScore = this.enduranceScoreService.calculate(
       Number(this.tTeam.value), Number(this.tMax.value),
       this.tTeamUnit, this.tMaxUnit,

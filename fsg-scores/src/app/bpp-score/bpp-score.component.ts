@@ -24,6 +24,8 @@ export class BppScoreComponent implements OnInit {
   }
 
   calculateBppScore() {
+    this.notifactionService.dismissCurrentErrorMessage();
+
     this.bppScore = this.bppScoreService.calculate(
       Number(this.pTeam.value), Number(this.pMax.value)
     );

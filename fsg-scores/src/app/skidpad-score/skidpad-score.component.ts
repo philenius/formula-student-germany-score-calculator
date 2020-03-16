@@ -45,6 +45,8 @@ export class SkidpadScoreComponent implements OnInit {
   }
 
   calculateSkidpadScore() {
+    this.notifactionService.dismissCurrentErrorMessage();
+
     try {
       this.skidpadScore = this.skidpadScoreService.calculate(
         Number(this.tTeam.value), Number(this.tMax.value),
