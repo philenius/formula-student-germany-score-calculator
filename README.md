@@ -1,6 +1,8 @@
 # Formula Student Germany (FSG) Score Calculator
 
-This application provides a simple user interface for calculating all scores that are part of Formula Student Germany (FSG) rules. The calculations are based on the formulas specified in [FSG rules 2020 version 1.0](https://www.formulastudent.de/fsg/rules/). The application is based on Angular 8.3.23 and uses [Angular Material](https://material.angular.io/).
+This application provides a simple user interface for calculating all scores that are part of Formula Student Germany (FSG) rules.
+The calculations are based on the formulas specified in [FSG rules 2020 version 1.0](https://www.formulastudent.de/fsg/rules/).
+The application was built with Angular 8.3.23 and uses [Angular Material](https://material.angular.io/). You can checkout a live demo of this app at [https://fsg-scores.philenius.de/](https://fsg-scores.philenius.de/).
 
 The calculation of the following scores has been implemented:
 
