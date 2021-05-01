@@ -7,8 +7,16 @@ export class EnduranceScoreService {
 
   constructor() { }
 
-  calculate(tTeam: number, tMax: number, tTeamUnit: string, tMaxUnit: string,
-    tTeamDoo: number, tTeamOc: number, tMaxDoo: number, tMaxOc: number) {
+  calculate(
+    tTeam: number,
+    tMax: number,
+    tTeamUnit: string,
+    tMaxUnit: string,
+    tTeamDoo: number,
+    tTeamOc: number,
+    tMaxDoo: number,
+    tMaxOc: number
+  ): number {
 
     // unit conversion
     if (tTeamUnit === 'minutes') {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { AutocrossScoreService } from '../autocross-score.service';
 import { NotificationService } from '../notification.service';
@@ -8,7 +8,7 @@ import { NotificationService } from '../notification.service';
   templateUrl: './autocross-score.component.html',
   styleUrls: ['./autocross-score.component.css']
 })
-export class AutocrossScoreComponent implements OnInit {
+export class AutocrossScoreComponent {
 
   tTeam = new FormControl(0, [
     Validators.pattern(new RegExp(/^\d+(\.\d+)?$/))
@@ -37,16 +37,13 @@ export class AutocrossScoreComponent implements OnInit {
 
   tTeamUnit = 'minutes';
   tMaxUnit = 'minutes';
-  autocrossScore: number = 0;
+  autocrossScore = 0;
 
   constructor(private autocrossScoreService: AutocrossScoreService, private notifactionService: NotificationService) { }
 
-  ngOnInit() {
-  }
-
-  calculateAutocrossScore() {
+  calculateAutocrossScore(): void {
     this.notifactionService.dismissCurrentErrorMessage();
-    
+
     try {
       this.autocrossScore = this.autocrossScoreService.calculate(
         Number(this.tTeam.value), Number(this.tMax.value),

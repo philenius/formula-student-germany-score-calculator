@@ -7,7 +7,7 @@ export class EfficiencyScoreService {
 
   constructor() { }
 
-  calculate(eTeam: number, eMax: number) {
+  calculate(eTeam: number, eMax: number): number {
     return 100 * (((0.1 / eTeam) - 1) / ((0.1 / eMax) - 1));
   }
 }

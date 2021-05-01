@@ -6,7 +6,7 @@ describe('AutocrossScoreService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: AutocrossScoreService = TestBed.get(AutocrossScoreService);
+    const service: AutocrossScoreService = TestBed.inject(AutocrossScoreService);
     expect(service).toBeTruthy();
   });
 });

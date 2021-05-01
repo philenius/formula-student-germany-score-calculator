@@ -8,7 +8,7 @@ import { SkidpadScoreService } from '../skidpad-score.service';
   templateUrl: './skidpad-score.component.html',
   styleUrls: ['./skidpad-score.component.css']
 })
-export class SkidpadScoreComponent implements OnInit {
+export class SkidpadScoreComponent {
 
   tTeam = new FormControl(0, [
     Validators.pattern(new RegExp(/^\d+(\.\d+)?$/))
@@ -37,14 +37,11 @@ export class SkidpadScoreComponent implements OnInit {
 
   tTeamUnit = 'minutes';
   tMaxUnit = 'minutes';
-  skidpadScore: number = 0;
+  skidpadScore = 0;
 
   constructor(private skidpadScoreService: SkidpadScoreService, private notifactionService: NotificationService) { }
 
-  ngOnInit() {
-  }
-
-  calculateSkidpadScore() {
+  calculateSkidpadScore(): void {
     this.notifactionService.dismissCurrentErrorMessage();
 
     try {
@@ -63,7 +60,8 @@ export class SkidpadScoreComponent implements OnInit {
     }
     if (this.skidpadScore < 0) {
       this.skidpadScore = 0.0;
-      this.notifactionService.showErrorMessage('No additional points awarded because team’s run time including penalties is not below Tmax.');
+      this.notifactionService.showErrorMessage('No additional points awarded because team’s run ' +
+        'time including penalties is not below Tmax.');
     }
   }
 

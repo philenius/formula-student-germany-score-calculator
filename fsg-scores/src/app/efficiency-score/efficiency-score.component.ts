@@ -8,7 +8,7 @@ import { NotificationService } from '../notification.service';
   templateUrl: './efficiency-score.component.html',
   styleUrls: ['./efficiency-score.component.css']
 })
-export class EfficiencyScoreComponent implements OnInit {
+export class EfficiencyScoreComponent {
 
   eTeam = new FormControl(0, [
     Validators.pattern(new RegExp(/^\d+(\.\d+)?$/))
@@ -16,14 +16,11 @@ export class EfficiencyScoreComponent implements OnInit {
   eMax = new FormControl(0, [
     Validators.pattern(new RegExp(/^\d+(\.\d+)?$/))
   ]);
-  efficiencyScore: number = 0;
+  efficiencyScore = 0;
 
   constructor(private efficiencyScoreService: EfficiencyScoreService, private notifactionService: NotificationService) { }
 
-  ngOnInit() {
-  }
-
-  calculateEfficiencyScore() {
+  calculateEfficiencyScore(): void {
     this.notifactionService.dismissCurrentErrorMessage();
 
     this.efficiencyScore = this.efficiencyScoreService.calculate(

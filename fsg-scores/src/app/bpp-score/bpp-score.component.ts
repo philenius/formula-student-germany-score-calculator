@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { BppScoreService } from '../bpp-score.service';
 import { NotificationService } from '../notification.service';
@@ -8,7 +8,7 @@ import { NotificationService } from '../notification.service';
   templateUrl: './bpp-score.component.html',
   styleUrls: ['./bpp-score.component.css']
 })
-export class BppScoreComponent implements OnInit {
+export class BppScoreComponent {
 
   pTeam = new FormControl(0, [
     Validators.pattern(new RegExp(/^\d+$/))
@@ -16,14 +16,11 @@ export class BppScoreComponent implements OnInit {
   pMax = new FormControl(0, [
     Validators.pattern(new RegExp(/^\d+$/))
   ]);
-  bppScore: number = 0;
+  bppScore = 0;
 
   constructor(private bppScoreService: BppScoreService, private notifactionService: NotificationService) { }
 
-  ngOnInit() {
-  }
-
-  calculateBppScore() {
+  calculateBppScore(): void {
     this.notifactionService.dismissCurrentErrorMessage();
 
     this.bppScore = this.bppScoreService.calculate(

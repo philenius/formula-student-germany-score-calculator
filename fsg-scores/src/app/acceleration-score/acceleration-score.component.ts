@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { AccelerationScoreService } from '../acceleration-score.service';
 import { NotificationService } from '../notification.service';
@@ -8,7 +8,7 @@ import { NotificationService } from '../notification.service';
   templateUrl: './acceleration-score.component.html',
   styleUrls: ['./acceleration-score.component.css']
 })
-export class AccelerationScoreComponent implements OnInit {
+export class AccelerationScoreComponent {
 
   tTeam = new FormControl(0, [
     Validators.pattern(new RegExp(/^\d+(\.\d+)?$/))
@@ -37,14 +37,11 @@ export class AccelerationScoreComponent implements OnInit {
 
   tTeamUnit = 'minutes';
   tMaxUnit = 'minutes';
-  accelerationScore: number = 0;
+  accelerationScore = 0;
 
   constructor(private accelerationScoreService: AccelerationScoreService, private notifactionService: NotificationService) { }
 
-  ngOnInit() {
-  }
-
-  calculateAccelerationScore() {
+  calculateAccelerationScore(): void {
     this.notifactionService.dismissCurrentErrorMessage();
 
     try {

@@ -6,7 +6,7 @@ describe('SkidpadScoreService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: SkidpadScoreService = TestBed.get(SkidpadScoreService);
+    const service: SkidpadScoreService = TestBed.inject(SkidpadScoreService);
     expect(service).toBeTruthy();
   });
 });

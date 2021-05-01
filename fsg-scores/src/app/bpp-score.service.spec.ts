@@ -6,7 +6,7 @@ describe('BppScoreService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: BppScoreService = TestBed.get(BppScoreService);
+    const service: BppScoreService = TestBed.inject(BppScoreService);
     expect(service).toBeTruthy();
   });
 });

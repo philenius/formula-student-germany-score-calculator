@@ -7,9 +7,18 @@ export class AutocrossScoreService {
 
   constructor() { }
 
-  calculate(tTeam: number, tMax: number, tTeamUnit: string, tMaxUnit: string,
-    tTeamDoo: number, tTeamOc: number, tTeamUss: number,
-    tMaxDoo: number, tMaxOc: number, tMaxUss: number) {
+  calculate(
+    tTeam: number,
+    tMax: number,
+    tTeamUnit: string,
+    tMaxUnit: string,
+    tTeamDoo: number,
+    tTeamOc: number,
+    tTeamUss: number,
+    tMaxDoo: number,
+    tMaxOc: number,
+    tMaxUss: number
+  ): number {
 
     // unit conversion
     if (tTeamUnit === 'minutes') {
@@ -36,7 +45,7 @@ export class AutocrossScoreService {
       p += oc * 10;
     }
     if (uss !== 0) {
-      throw new Error('Warning: Unsafe Stop (USS) causes penalty of Did not Finish (DNF).')
+      throw new Error('Warning: Unsafe Stop (USS) causes penalty of Did not Finish (DNF).');
     }
     return p;
   }

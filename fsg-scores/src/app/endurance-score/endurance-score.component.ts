@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { EnduranceScoreService } from '../endurance-score.service';
 import { NotificationService } from '../notification.service';
@@ -8,7 +8,7 @@ import { NotificationService } from '../notification.service';
   templateUrl: './endurance-score.component.html',
   styleUrls: ['./endurance-score.component.css']
 })
-export class EnduranceScoreComponent implements OnInit {
+export class EnduranceScoreComponent {
 
   tTeam = new FormControl(0, [
     Validators.pattern(new RegExp(/^\d+(\.\d+)?$/))
@@ -31,14 +31,11 @@ export class EnduranceScoreComponent implements OnInit {
 
   tTeamUnit = 'minutes';
   tMaxUnit = 'minutes';
-  enduranceScore: number = 0;
+  enduranceScore = 0;
 
   constructor(private enduranceScoreService: EnduranceScoreService, private notifactionService: NotificationService) { }
 
-  ngOnInit() {
-  }
-
-  calculateEnduranceScore() {
+  calculateEnduranceScore(): void {
     this.notifactionService.dismissCurrentErrorMessage();
 
     this.enduranceScore = this.enduranceScoreService.calculate(

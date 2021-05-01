@@ -6,7 +6,7 @@ describe('EfficiencyScoreService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: EfficiencyScoreService = TestBed.get(EfficiencyScoreService);
+    const service: EfficiencyScoreService = TestBed.inject(EfficiencyScoreService);
     expect(service).toBeTruthy();
   });
 });

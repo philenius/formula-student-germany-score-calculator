@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { EfficiencyFactorService } from '../efficiency-factor.service';
 import { NotificationService } from '../notification.service';
@@ -8,7 +8,7 @@ import { NotificationService } from '../notification.service';
   templateUrl: './efficiency-factor.component.html',
   styleUrls: ['./efficiency-factor.component.css']
 })
-export class EfficiencyFactorComponent implements OnInit {
+export class EfficiencyFactorComponent {
 
   tTeam = new FormControl(0, [
     Validators.pattern(new RegExp(/^\d+(\.\d+)?$/))
@@ -25,14 +25,11 @@ export class EfficiencyFactorComponent implements OnInit {
 
   tTeamUnit = 'minutes';
   tMinUnit = 'minutes';
-  efficiencyFactor: number = 0;
+  efficiencyFactor = 0;
 
   constructor(private efficiencyFactorService: EfficiencyFactorService, private notifactionService: NotificationService) { }
 
-  ngOnInit() {
-  }
-
-  calculateEfficiencyFactor() {
+  calculateEfficiencyFactor(): void {
     this.notifactionService.dismissCurrentErrorMessage();
 
     this.efficiencyFactor = this.efficiencyFactorService.calculate(

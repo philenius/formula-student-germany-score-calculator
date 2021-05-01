@@ -6,7 +6,7 @@ describe('AccelerationScoreService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: AccelerationScoreService = TestBed.get(AccelerationScoreService);
+    const service: AccelerationScoreService = TestBed.inject(AccelerationScoreService);
     expect(service).toBeTruthy();
   });
 });

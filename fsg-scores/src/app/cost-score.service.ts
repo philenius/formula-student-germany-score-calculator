@@ -7,7 +7,7 @@ export class CostScoreService {
 
   constructor() { }
 
-  calculate(pTeam: number, pMax: number) {
+  calculate(pTeam: number, pMax: number): number {
     return 95 * (pTeam / pMax);
   }
 

@@ -8,7 +8,7 @@ import { FormControl, Validators } from '@angular/forms';
   templateUrl: './cost-score.component.html',
   styleUrls: ['./cost-score.component.css']
 })
-export class CostScoreComponent implements OnInit {
+export class CostScoreComponent {
 
   pTeam = new FormControl(0, [
     Validators.pattern(new RegExp(/^\d+$/))
@@ -16,14 +16,11 @@ export class CostScoreComponent implements OnInit {
   pMax = new FormControl(0, [
     Validators.pattern(new RegExp(/^\d+$/))
   ]);
-  costScore: number = 0;
+  costScore = 0;
 
   constructor(private costScoreService: CostScoreService, private notifactionService: NotificationService) { }
 
-  ngOnInit() {
-  }
-
-  calculateCostScore() {
+  calculateCostScore(): void {
     this.notifactionService.dismissCurrentErrorMessage();
 
     this.costScore = this.costScoreService.calculate(

@@ -10,13 +10,13 @@ export class NotificationService {
 
   constructor(private snackBar: MatSnackBar) { }
 
-  showErrorMessage(message: string, durationInMs?: number) {
+  showErrorMessage(message: string, durationInMs?: number): void {
     durationInMs = durationInMs ? durationInMs : this.defaultMessageDurationInMs;
     this.snackBar.open(message, 'Error', { duration: durationInMs, panelClass: 'error' });
     console.error(message);
   }
 
-  dismissCurrentErrorMessage() {
+  dismissCurrentErrorMessage(): void {
     this.snackBar.dismiss();
   }
 

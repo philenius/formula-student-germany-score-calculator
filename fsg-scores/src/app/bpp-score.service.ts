@@ -7,7 +7,7 @@ export class BppScoreService {
 
   constructor() { }
 
-  calculate(pTeam: number, pMax: number) {
+  calculate(pTeam: number, pMax: number): number {
     return 70 * (pTeam / pMax);
   }
 

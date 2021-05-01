@@ -4,10 +4,19 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class SkidpadScoreService {
-  
-  calculate(tTeam: number, tMax: number, tTeamUnit: string, tMaxUnit: string,
-    tTeamDoo: number, tTeamOc: number, tTeamUss: number,
-    tMaxDoo: number, tMaxOc: number, tMaxUss: number) {
+
+  calculate(
+    tTeam: number,
+    tMax: number,
+    tTeamUnit: string,
+    tMaxUnit: string,
+    tTeamDoo: number,
+    tTeamOc: number,
+    tTeamUss: number,
+    tMaxDoo: number,
+    tMaxOc: number,
+    tMaxUss: number
+  ): number {
 
     // unit conversion
     if (tTeamUnit === 'minutes') {
@@ -31,7 +40,7 @@ export class SkidpadScoreService {
       p += doo * 0.2;
     }
     if (oc !== 0 || uss !== 0) {
-      throw new Error('Warning: Unsafe Stop (USS) causes penalty of Did not Finish (DNF).')
+      throw new Error('Warning: Unsafe Stop (USS) causes penalty of Did not Finish (DNF).');
     }
     return p;
   }

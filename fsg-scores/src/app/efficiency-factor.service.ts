@@ -7,8 +7,14 @@ export class EfficiencyFactorService {
 
   constructor() { }
 
-  calculate(tTeam: number, tMin: number, tTeamUnit: string, tMinUnit: string,
-    enTeam: number, enMin: number) {
+  calculate(
+    tTeam: number,
+    tMin: number,
+    tTeamUnit: string,
+    tMinUnit: string,
+    enTeam: number,
+    enMin: number
+  ): number {
 
     // unit conversion
     if (tTeamUnit === 'minutes') {

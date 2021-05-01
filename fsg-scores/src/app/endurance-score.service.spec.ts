@@ -6,7 +6,7 @@ describe('EnduranceScoreService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: EnduranceScoreService = TestBed.get(EnduranceScoreService);
+    const service: EnduranceScoreService = TestBed.inject(EnduranceScoreService);
     expect(service).toBeTruthy();
   });
 });
