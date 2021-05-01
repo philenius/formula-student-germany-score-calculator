@@ -1,11 +1,11 @@
-FROM node:10-slim as builder
+FROM node:14-slim as builder
 
-RUN npm install -g @angular/cli@8.3.23
+RUN npm install -g @angular/cli@11.2.11
 
 WORKDIR /app
 COPY fsg-scores/ .
 
-RUN npm install && ng build --prod
+RUN npm ci && ng build --prod
 
 FROM nginx:1.15
 
