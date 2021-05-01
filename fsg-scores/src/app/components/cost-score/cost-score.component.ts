@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CostScoreService } from '../cost-score.service';
-import { NotificationService } from '../notification.service';
+import { CostScoreService } from '../../services/cost-score.service';
+import { NotificationService } from '../../services/notification.service';
 import { FormControl, Validators } from '@angular/forms';
 
 @Component({

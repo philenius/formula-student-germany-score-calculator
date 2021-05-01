@@ -1,14 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { AutocrossScoreService } from '../autocross-score.service';
-import { NotificationService } from '../notification.service';
+import { NotificationService } from '../../services/notification.service';
+import { SkidpadScoreService } from '../../services/skidpad-score.service';
 
 @Component({
-  selector: 'app-autocross-score',
-  templateUrl: './autocross-score.component.html',
-  styleUrls: ['./autocross-score.component.css']
+  selector: 'app-skidpad-score',
+  templateUrl: './skidpad-score.component.html',
+  styleUrls: ['./skidpad-score.component.css']
 })
-export class AutocrossScoreComponent {
+export class SkidpadScoreComponent {
 
   tTeam = new FormControl(0, [
     Validators.pattern(new RegExp(/^\d+(\.\d+)?$/))
@@ -37,26 +37,31 @@ export class AutocrossScoreComponent {
 
   tTeamUnit = 'minutes';
   tMaxUnit = 'minutes';
-  autocrossScore = 0;
+  skidpadScore = 0;
 
-  constructor(private autocrossScoreService: AutocrossScoreService, private notifactionService: NotificationService) { }
+  constructor(private skidpadScoreService: SkidpadScoreService, private notifactionService: NotificationService) { }
 
-  calculateAutocrossScore(): void {
+  calculateSkidpadScore(): void {
     this.notifactionService.dismissCurrentErrorMessage();
 
     try {
-      this.autocrossScore = this.autocrossScoreService.calculate(
+      this.skidpadScore = this.skidpadScoreService.calculate(
         Number(this.tTeam.value), Number(this.tMax.value),
         this.tTeamUnit, this.tMaxUnit,
         Number(this.dooTTeam.value), Number(this.ocTTeam.value), Number(this.ussTTeam.value),
         Number(this.dooTMax.value), Number(this.ocTMax.value), Number(this.ussTMax.value)
       );
-      if (isNaN(this.autocrossScore)) {
-        this.notifactionService.showErrorMessage('Calculation of autocross score failed.');
+      if (isNaN(this.skidpadScore)) {
+        this.notifactionService.showErrorMessage('Calculation of skidpad score failed.');
       }
     } catch (e) {
-      this.autocrossScore = NaN;
+      this.skidpadScore = NaN;
       this.notifactionService.showErrorMessage((e as Error).message);
+    }
+    if (this.skidpadScore < 0) {
+      this.skidpadScore = 0.0;
+      this.notifactionService.showErrorMessage('No additional points awarded because team’s run ' +
+        'time including penalties is not below Tmax.');
     }
   }
 

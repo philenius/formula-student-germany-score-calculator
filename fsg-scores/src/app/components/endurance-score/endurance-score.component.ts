@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { EnduranceScoreService } from '../endurance-score.service';
-import { NotificationService } from '../notification.service';
+import { EnduranceScoreService } from '../../services/endurance-score.service';
+import { NotificationService } from '../../services/notification.service';
 
 @Component({
   selector: 'app-endurance-score',

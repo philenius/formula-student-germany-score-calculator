@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { EfficiencyFactorService } from '../efficiency-factor.service';
-import { NotificationService } from '../notification.service';
+import { EfficiencyFactorService } from '../../services/efficiency-factor.service';
+import { NotificationService } from '../../services/notification.service';
 
 @Component({
   selector: 'app-efficiency-factor',

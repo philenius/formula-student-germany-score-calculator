@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { EnduranceScoreComponent } from './endurance-score/endurance-score.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -19,13 +18,14 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 
-import { EfficiencyFactorComponent } from './efficiency-factor/efficiency-factor.component';
-import { EfficiencyScoreComponent } from './efficiency-score/efficiency-score.component';
-import { AutocrossScoreComponent } from './autocross-score/autocross-score.component';
-import { SkidpadScoreComponent } from './skidpad-score/skidpad-score.component';
-import { AccelerationScoreComponent } from './acceleration-score/acceleration-score.component';
-import { CostScoreComponent } from './cost-score/cost-score.component';
-import { BppScoreComponent } from './bpp-score/bpp-score.component';
+import { AccelerationScoreComponent } from './components/acceleration-score/acceleration-score.component';
+import { AutocrossScoreComponent } from './components/autocross-score/autocross-score.component';
+import { BppScoreComponent } from './components/bpp-score/bpp-score.component';
+import { CostScoreComponent } from './components/cost-score/cost-score.component';
+import { EfficiencyFactorComponent } from './components/efficiency-factor/efficiency-factor.component';
+import { EfficiencyScoreComponent } from './components/efficiency-score/efficiency-score.component';
+import { EnduranceScoreComponent } from './components/endurance-score/endurance-score.component';
+import { SkidpadScoreComponent } from './components/skidpad-score/skidpad-score.component';
 
 @NgModule({
   declarations: [

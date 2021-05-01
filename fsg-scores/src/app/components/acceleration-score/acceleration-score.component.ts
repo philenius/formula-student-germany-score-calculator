@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { AccelerationScoreService } from '../acceleration-score.service';
-import { NotificationService } from '../notification.service';
+import { AccelerationScoreService } from '../../services/acceleration-score.service';
+import { NotificationService } from '../../services/notification.service';
 
 @Component({
   selector: 'app-acceleration-score',

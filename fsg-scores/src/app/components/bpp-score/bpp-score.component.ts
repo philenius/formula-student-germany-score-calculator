@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { BppScoreService } from '../bpp-score.service';
-import { NotificationService } from '../notification.service';
+import { BppScoreService } from '../../services/bpp-score.service';
+import { NotificationService } from '../../services/notification.service';
 
 @Component({
   selector: 'app-bpp-score',
