@@ -1,7 +1,7 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: Angular CI
+name: Angular CI - lint & build
 
 on:
   push:
@@ -27,7 +27,7 @@ jobs:
     - run: npm install -g @angular/cli@11.2.11
     - run: npm ci
       working-directory: ./fsg-scores
-    - run: npm lint
+    - run: ng lint
       working-directory: ./fsg-scores
     - run: ng build --prod
       working-directory: ./fsg-scores
